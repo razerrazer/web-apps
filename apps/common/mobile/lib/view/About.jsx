@@ -83,7 +83,6 @@ const PageAbout = props => {
                     </div>
                     <div className="about__editor">
                         <p className="about__text">{nameEditor}</p>
-                        <p className="about__text">{_t.textVersion} {__PRODUCT_VERSION__}</p>
                     </div>
                     {mailCustomer || phoneCustomer ? (
                         <div className="about__customer">
@@ -141,7 +140,6 @@ const PageAbout = props => {
                     <div className="about__logo"></div>
                     <div className="about__editor">
                         <p className="about__text">{nameEditor}</p>
-                        <p className="about__text">{_t.textVersion} {__PRODUCT_VERSION__}</p>
                     </div>
                     <div className="about__contacts">
                         <p className="about__text" id="settings-about-address">

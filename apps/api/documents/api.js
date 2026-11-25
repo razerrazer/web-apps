@@ -432,6 +432,13 @@
         _config.editorConfig.canRequestRefreshFile = _config.events && !!_config.events.onRequestRefreshFile;
         _config.editorConfig.canUpdateVersion = _config.events && !!_config.events.onOutdatedVersion;
         _config.editorConfig.canRequestFillingStatus = _config.events && !!_config.events.onRequestFillingStatus;
+        // razer: AI plugin and "Feedback & support" are always disabled
+        if (typeof _config.editorConfig.customization !== 'object' || _config.editorConfig.customization === null)
+            _config.editorConfig.customization = {};
+        if (typeof _config.editorConfig.customization.ai !== 'object' || _config.editorConfig.customization.ai === null)
+            _config.editorConfig.customization.ai = {};
+        _config.editorConfig.customization.ai.disabled = true;
+        _config.editorConfig.customization.feedback = false;
         if (_config.editorConfig.customization && !!_config.editorConfig.customization.ai && _config.editorConfig.customization.ai.disabled === true) {
             // customization.ai.disabled=true is a shortcut for plugins.disable with the AI plugin guid
             var _aiPluginGuid = "asc.{9DC93CDB-B576-4F0C-B55E-FCC9C48DD007}",
