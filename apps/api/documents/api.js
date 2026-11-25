@@ -444,6 +444,14 @@
         // The integration may send "sv", "sv_SE" or an English locale, which ends up as en-US formats.
         // A region the user picks in the editor settings is stored locally and still wins.
         _config.editorConfig.region = 'sv-SE';
+        // razer: "back to folder" opens in the same tab when the integrating page is the top window.
+        // Nextcloud ONLYOFFICE >= 9.10 no longer sends goback.blank=false for "open in same tab", so the
+        // button calls window.open(url, '_blank'), which our Android app's WebView mishandles (white page).
+        try {
+            var _goback = _config.editorConfig.customization.goback;
+            if (_goback && typeof _goback === 'object' && _goback.url && _goback.blank === undefined && window.top === window.self)
+                _goback.blank = false;
+        } catch (e) {}
         if (_config.editorConfig.customization && !!_config.editorConfig.customization.ai && _config.editorConfig.customization.ai.disabled === true) {
             // customization.ai.disabled=true is a shortcut for plugins.disable with the AI plugin guid
             var _aiPluginGuid = "asc.{9DC93CDB-B576-4F0C-B55E-FCC9C48DD007}",
