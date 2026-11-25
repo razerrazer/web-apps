@@ -136,8 +136,15 @@ export class storeApplicationSettings {
 
     getRegCode() {
         const regData = this.regData;
-        let value = Number(LocalStorage.getItem('sse-settings-regional'));
-        
+        const stored = LocalStorage.getItem('sse-settings-regional');
+        let value = Number(stored);
+        // razer: without a stored user choice, show the locale the editor actually
+        // uses (editorConfig.region) instead of always showing English (United States)
+        if (stored === null) {
+            const api = Common.EditorApi.get();
+            if (api && api.asc_getLocale) value = Number(api.asc_getLocale());
+        }
+
         regData.forEach(obj => {
             if(obj.code === value) {
                 this.regCode = obj.code;
