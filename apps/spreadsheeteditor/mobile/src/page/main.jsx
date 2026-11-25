@@ -222,7 +222,8 @@ class MainPage extends Component {
                         <Navbar id='editor-navbar' className={`main-navbar${!isHideLogo ? ' navbar-with-logo' : ''}`}>
                             {!isHideLogo &&
                                 <div className="main-logo" onClick={() => {
-                                    window.open(`${customLogoImage && customLogoUrl ? customLogoUrl : __PUBLISHER_URL__}`, "_blank");
+                                    // razer: the logo never links to onlyoffice.com
+                                customLogoImage && customLogoUrl && window.open(customLogoUrl, "_blank");
                                 }}>
                                     {customLogoImage ? 
                                         <img className='custom-logo-image' src={customLogoImage} />

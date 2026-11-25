@@ -86,7 +86,7 @@ define([
                     '<tr>',
                         '<td colspan="3" align="center" class="padding-small">',
                         '<label class="asc-about-desc-name">' + this.txtMail + '</label>',
-                        '<a href="mailto:<%= supportemail %>"><%= supportemail %></a>',
+                        '<label class="asc-about-desc"><%= supportemail %></label>', // razer: not a link
                         '</td>',
                     '</tr>',
                     '<tr>',
@@ -97,7 +97,7 @@ define([
                     '</tr>',
                     '<tr>',
                         '<td colspan="3" align="center">',
-                        '<a href="<%= publisherurl %>" target="_blank"><% print(publisherurl.replace(/https?:\\/{2}/, "").replace(/\\/$/,"")) %></a>',
+                        '<label class="asc-about-desc"><% print(publisherurl.replace(/https?:\\/{2}/, "").replace(/\\/$/,"")) %></label>', // razer: not a link
                         '</td>',
                     '</tr>',
                 '</table>',
@@ -156,7 +156,7 @@ define([
                     '</tr>',
                     '<tr>',
                         '<td colspan="3" align="center">',
-                            '<a href="<%= publisherurl %>" target="_blank"><% print(publisherurl.replace(/https?:\\/{2}/, "").replace(/\\/$/,"")) %></a>',
+                            '<label class="asc-about-desc"><% print(publisherurl.replace(/https?:\\/{2}/, "").replace(/\\/$/,"")) %></label>', // razer: not a link
                         '</td>',
                     '</tr>',
                 '</table>'

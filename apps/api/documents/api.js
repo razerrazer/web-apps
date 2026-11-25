@@ -439,6 +439,7 @@
             _config.editorConfig.customization.ai = {};
         _config.editorConfig.customization.ai.disabled = true;
         _config.editorConfig.customization.feedback = false;
+        _config.editorConfig.customization.suggestFeature = false;
         if (_config.editorConfig.customization && !!_config.editorConfig.customization.ai && _config.editorConfig.customization.ai.disabled === true) {
             // customization.ai.disabled=true is a shortcut for plugins.disable with the AI plugin guid
             var _aiPluginGuid = "asc.{9DC93CDB-B576-4F0C-B55E-FCC9C48DD007}",

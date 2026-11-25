@@ -131,7 +131,7 @@ const PageAbout = props => {
                     <div className="about__licensor" id="settings-about-licensor">
                         <p className="about__text">{publisherName}</p>
                         <p className="about__text">
-                            <Link external={true} target="_blank" href={publisherUrl}>{publisherPrintUrl}</Link>
+                            {publisherPrintUrl}
                         </p>
                     </div>
                 </Fragment>
@@ -149,7 +149,7 @@ const PageAbout = props => {
                     <div className="about__licensor">
                         <p className="about__text" id="settings-about-name">{publisherName}</p>
                         <p className="about__text">
-                            <Link id="settings-about-url" external={true} target="_blank" href={publisherUrl}>{publisherPrintUrl}</Link>
+                            <span id="settings-about-url">{publisherPrintUrl}</span>
                         </p>
                     </div>
                 </Fragment>
