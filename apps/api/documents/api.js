@@ -440,6 +440,10 @@
         _config.editorConfig.customization.ai.disabled = true;
         _config.editorConfig.customization.feedback = false;
         _config.editorConfig.customization.suggestFeature = false;
+        // razer: Swedish regional formats (dates d/m, decimal comma) by default.
+        // The integration may send "sv", "sv_SE" or an English locale, which ends up as en-US formats.
+        // A region the user picks in the editor settings is stored locally and still wins.
+        _config.editorConfig.region = 'sv-SE';
         if (_config.editorConfig.customization && !!_config.editorConfig.customization.ai && _config.editorConfig.customization.ai.disabled === true) {
             // customization.ai.disabled=true is a shortcut for plugins.disable with the AI plugin guid
             var _aiPluginGuid = "asc.{9DC93CDB-B576-4F0C-B55E-FCC9C48DD007}",
