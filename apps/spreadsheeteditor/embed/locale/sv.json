@@ -48,5 +48,14 @@
   "SSE.ApplicationView.txtFullScreen": "Fullskärm",
   "SSE.ApplicationView.txtPrint": "Skriva ut",
   "SSE.ApplicationView.txtSearch": "Sök",
-  "SSE.ApplicationView.txtShare": "Dela"
+  "SSE.ApplicationView.txtShare": "Dela",
+  "SSE.ApplicationController.errorCopyDisabled": "Av säkerhetsskäl kan innehållet i det här dokumentet inte kopieras.",
+  "SSE.ApplicationController.errorFileNotAssembled": "Filen har öppnats från en säkerhetskopia på servern och har inte sparats i lagringen.<br>Använd alternativet 'Spara som...' för att spara den på en enhet.",
+  "SSE.ApplicationController.errorForcedViewMode": "Filen har öppnats i visningsläge.<br>Filen är låst för redigering eller så tillåter inte dina behörigheter redigering.",
+  "SSE.ApplicationController.errorToken": "Dokumentets säkerhetstoken är inte korrekt.<br>Vänligen kontakta din dokumentserver administratör.",
+  "SSE.ApplicationController.titleLicenseExp": "Licensen har gått ut",
+  "SSE.ApplicationController.txtNo": "Inga",
+  "SSE.ApplicationController.txtOpenWarning": "Att klicka på den här länken kan skada din enhet och dina data. Klicka bara på länkar från betrodda källor för att skydda din dator. Den här platsen kan vara osäker:<br>%1<br>Är du säker på att du vill fortsätta?",
+  "SSE.ApplicationController.txtPressLink": "Klicka på länken för att öppna den",
+  "SSE.ApplicationController.txtYes": "Ja"
 }
