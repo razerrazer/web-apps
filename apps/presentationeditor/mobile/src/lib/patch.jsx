@@ -35,6 +35,6 @@
 
 const EditorUIController = () => null;
 
-EditorUIController.isSupportEditFeature = () => false;
+EditorUIController.isSupportEditFeature = () => true;
 
 export default EditorUIController;
