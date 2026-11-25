@@ -50,11 +50,11 @@ const PageHelpAndFeedback = props => {
     const settingsContext = useContext(SettingsContext);
 
     const appOptions = props.storeAppOptions;
-    let _canHelp = true,
+    let _canHelp = false /* razer: no external Help Center */,
         _canFeedback = true;
 
     if (!appOptions.isDisconnected && appOptions.customization) {
-        _canHelp = appOptions.customization.help !== false;
+        _canHelp = false; // razer: no external Help Center
         _canFeedback = (
             appOptions.customization.feedback !== false && 
             appOptions.customization.feedback.visible !== false

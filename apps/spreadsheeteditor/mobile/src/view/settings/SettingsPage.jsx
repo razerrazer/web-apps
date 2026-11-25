@@ -103,7 +103,7 @@ const SettingsPage = inject('storeAppOptions', 'storeSpreadsheetInfo', 'storeToo
         _canDownload = false,
         _canDownloadOrigin = false,
         _canAbout = true,
-        _canHelp = true,
+        _canHelp = false /* razer: no external Help Center */,
         _canPrint = false,
         _canFeedback = true,
         _canRequestSaveAs = false,
@@ -125,7 +125,7 @@ const SettingsPage = inject('storeAppOptions', 'storeSpreadsheetInfo', 'storeToo
         }
 
         if (appOptions.customization) {
-            _canHelp = appOptions.customization.help !== false;
+            _canHelp = false; // razer: no external Help Center
             _canFeedback = (
                 appOptions.customization.feedback !== false && 
                 appOptions.customization.feedback.visible !== false
