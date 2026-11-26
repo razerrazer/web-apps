@@ -118,7 +118,7 @@
     "openErrorText": "Ett fel uppstod när filen öppnades",
     "saveErrorText": "Ett fel uppstod när filen skulle sparas",
     "scriptLoadError": "Anslutningen är för långsam, vissa komponenter kunde inte läsas in. Ladda om sidan.",
-    "textOk": "Redigera",
+    "textOk": "OK",
     "unknownErrorText": "Okänt fel.",
     "uploadImageExtMessage": "Okänt bildformat.",
     "uploadImageFileCountMessage": "Inga bilder laddades upp.",

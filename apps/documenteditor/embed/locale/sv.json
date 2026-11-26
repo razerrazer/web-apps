@@ -71,7 +71,7 @@
   "DE.ApplicationController.errorFileNotAssembled": "Filen har öppnats från en säkerhetskopia på servern och har inte sparats i lagringen.<br>Använd alternativet 'Spara som...' för att spara den på en enhet.",
   "DE.ApplicationController.errorForcedViewMode": "Filen har öppnats i visningsläge.<br>Filen är låst för redigering eller så tillåter inte dina behörigheter redigering.",
   "DE.ApplicationController.textCancel": "Avbryt",
-  "DE.ApplicationController.textOk": "Redigera",
+  "DE.ApplicationController.textOk": "OK",
   "DE.ApplicationController.textSubmitOk": "Ditt pdf formulär har sparats i sektionen för färdiga formulär",
   "DE.ApplicationController.textFilled": "Fylld",
   "DE.ApplicationController.txtNo": "Inga",
