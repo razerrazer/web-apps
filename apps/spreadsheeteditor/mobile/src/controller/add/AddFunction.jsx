@@ -61,7 +61,18 @@ class _FunctionGroups extends Component {
         });
     }
     init () {
-        this._editorLang = (LocalStorage.getItem('sse-settings-func-lang') || 'en').toLowerCase();
+        let lang = LocalStorage.getItem('sse-settings-func-lang');
+        if (!lang) {
+            // razer: like the desktop editor, default the formula language to the editor language
+            // (e.g. SUMMA for sv) instead of always English when the user has not chosen one
+            const settings = this.props.storeApplicationSettings;
+            const appLang = ((this.props.storeAppOptions && this.props.storeAppOptions.lang) || 'en').toLowerCase();
+            const shortLang = appLang.split(/[\-_]/)[0];
+            lang = settings.formulaLangs.indexOf(appLang) >= 0 ? appLang :
+                   settings.formulaLangs.indexOf(shortLang) >= 0 ? shortLang : 'en';
+            settings.changeFormulaLang(lang);
+        }
+        this._editorLang = lang.toLowerCase();
 
         const localizationFunctions = (data) => {
             this.api.asc_setLocalization(data, this._editorLang);
@@ -101,7 +112,7 @@ class _FunctionGroups extends Component {
         return null;
     }
 }
-const FunctionGroups = inject("storeFunctions")(observer(_FunctionGroups));
+const FunctionGroups = inject("storeFunctions", "storeApplicationSettings", "storeAppOptions")(observer(_FunctionGroups));
 
 class AddFunctionController extends Component {
     constructor (props) {
