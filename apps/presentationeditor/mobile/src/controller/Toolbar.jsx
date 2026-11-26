@@ -96,6 +96,14 @@ const ToolbarController = inject('storeAppOptions', 'users', 'storeFocusObjects'
                 data.config.customization.goback.url && !data.config.customization.goback.requestClose;
             props.storeToolbarSettings.setShowBack(canback);
         }
+        // razer: show the folder button (same place and visibility rules) when the editor can be closed
+        // but has no folder link, e.g. opened in an iframe; goBack then closes the editor
+        if (data && data.config && !props.storeToolbarSettings.isShowBack && data.config.canRequestClose &&
+            data.config.targetApp !== 'desktop' && data.config.customization &&
+            typeof data.config.customization.close === 'object' && data.config.customization.close !== null &&
+            data.config.customization.close.visible !== false) {
+            props.storeToolbarSettings.setShowBack(true);
+        }
     };
 
     const onRequestClose = () => {
@@ -132,6 +140,12 @@ const ToolbarController = inject('storeAppOptions', 'users', 'storeFocusObjects'
     };
 
     const goBack = (current) => {
+        // razer: opened in an iframe, the integration sends customization.close instead of a folder link
+        // (Nextcloud ONLYOFFICE) -> the folder button closes the editor instead
+        if (!(appOptions.customization.goback && appOptions.customization.goback.url) && appOptions.canCloseEditor) {
+            onRequestClose();
+            return;
+        }
         const api = Common.EditorApi.get();
 
         if (appOptions.customization.goback.requestClose && appOptions.canRequestClose) {
